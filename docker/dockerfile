@@ -1,0 +1,8 @@
+FROM python:3
+WORKDIR /usr/scr/app
+
+COPY . .
+
+RUN pip install --no-input -r requirments.txt
+EXPOSE 8000
+CMD ["python", "project/manage.py", "runserver", "0.0.0.0:8000"]
